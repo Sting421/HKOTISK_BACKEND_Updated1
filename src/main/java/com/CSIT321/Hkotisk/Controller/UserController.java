@@ -72,12 +72,12 @@ public class UserController extends TextWebSocketHandler {
         }
         return new ResponseEntity<ProductResponse>(resp, HttpStatus.OK);
     }
+    
     @GetMapping("/products/{id}")
     public ResponseEntity<ProductEntity> getProductsById(@PathVariable int id) {
         ProductEntity products = prodRepo.findByProductId(id);
         return ResponseEntity.ok(products);
     }
-
 
     // Adds a product to the cart
     @PostMapping("/cart")
